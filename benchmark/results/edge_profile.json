@@ -1,0 +1,241 @@
+{
+  "protocol": {
+    "crop_sec": 3.0,
+    "clip_sec": 5.0,
+    "sr": 44100,
+    "n_fft": 1024,
+    "hop": 512,
+    "n_mels": 128,
+    "tta_crops": 3,
+    "batch_size": 1
+  },
+  "host": {
+    "cpu_count": 20,
+    "torch": "2.11.0+cu128",
+    "cuda_available": true,
+    "platform": "Windows-11-10.0.26300-SP0",
+    "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+    "cpu_name": "12th Gen Intel(R) Core(TM) i7-12700H"
+  },
+  "models": {
+    "fresca": {
+      "model": "fresca",
+      "params": 2878523,
+      "params_millions": 2.878523,
+      "size": {
+        "fp32_mb": 11.00299072265625,
+        "fp16_mb": 5.501495361328125,
+        "int8_mb": 2.767470359802246
+      },
+      "input_shape_crop": [
+        1,
+        2,
+        128,
+        259
+      ],
+      "input_shape_clip": [
+        1,
+        2,
+        128,
+        431
+      ],
+      "backbone_macs_crop": 2234039936.0,
+      "backbone_macs_crop_M": 2234.039936,
+      "backbone_macs_clip_M": 3713.52064,
+      "backbone_elementwise_ops_M": 5.46496,
+      "thop_macs_crop_M": 2250.649472,
+      "frontend_macs_crop": {
+        "n_frames": 259,
+        "fft": 5304320.0,
+        "window": 265216,
+        "power": 265734.0,
+        "mel_matmul": 17006976,
+        "log_and_standardise": 99456.0,
+        "total": 22941702.0
+      },
+      "frontend_macs_crop_M": 22.941702,
+      "frontend_mel_sparse_macs_M": 0.260554,
+      "frontend_mel_nnz": 1006,
+      "end_to_end_macs_1crop_M": 2256.981638,
+      "end_to_end_macs_3crop_M": 6770.944914,
+      "peak_activation_mb_crop": 45.18210983276367,
+      "latency": {
+        "torch_cpu_1thread": {
+          "median_ms": 100.14735000004293,
+          "mean_ms": 100.60371666668289,
+          "p90_ms": 113.84739999994054,
+          "min_ms": 81.24409999982163,
+          "runs": 60
+        },
+        "torch_cpu_20thread": {
+          "median_ms": 28.2123999995747,
+          "mean_ms": 28.087874999937412,
+          "p90_ms": 31.13759999996546,
+          "min_ms": 23.349799999778043,
+          "runs": 60
+        },
+        "frontend_cpu_1thread": {
+          "median_ms": 2.998250000018743,
+          "mean_ms": 3.1440133333793105,
+          "p90_ms": 3.7512000008064206,
+          "min_ms": 2.6215999996566097,
+          "runs": 60
+        },
+        "cuda": {
+          "median_ms": 9.256849999928818,
+          "mean_ms": 9.053911666615022,
+          "p90_ms": 10.907000000770495,
+          "min_ms": 4.52080000013666,
+          "runs": 60
+        },
+        "onnx_fp32_1thread": {
+          "median_ms": 75.79425000039919,
+          "mean_ms": 74.81622833332342,
+          "p90_ms": 87.62699999988399,
+          "min_ms": 45.976499999596854,
+          "runs": 60,
+          "file_mb": 10.984817504882812
+        },
+        "onnx_int8_static_1thread": {
+          "median_ms": 91.70800000038071,
+          "mean_ms": 92.20295999995567,
+          "p90_ms": 106.3363000002937,
+          "min_ms": 60.7875999994576,
+          "runs": 60,
+          "file_mb": 2.873371124267578
+        }
+      },
+      "cuda_device": "NVIDIA GeForce RTX 3070 Ti Laptop GPU",
+      "onnx_meta": {
+        "int8_calibration_clips": 32,
+        "int8_preprocessed": true
+      },
+      "top_layers_macs_M": [
+        {
+          "layer": "stage4.0.conv2",
+          "macs_M": 306.70848
+        },
+        {
+          "layer": "stage4.1.conv1",
+          "macs_M": 306.70848
+        },
+        {
+          "layer": "stage4.1.conv2",
+          "macs_M": 306.70848
+        },
+        {
+          "layer": "stage3.0.conv2",
+          "macs_M": 153.35424
+        },
+        {
+          "layer": "stage3.1.conv1",
+          "macs_M": 153.35424
+        },
+        {
+          "layer": "stage3.1.conv2",
+          "macs_M": 153.35424
+        },
+        {
+          "layer": "stage4.0.conv1",
+          "macs_M": 153.35424
+        },
+        {
+          "layer": "stage2.0.conv2",
+          "macs_M": 76.67712
+        }
+      ]
+    },
+    "piczak": {
+      "model": "piczak",
+      "params": 712270,
+      "params_millions": 0.71227,
+      "size": {
+        "fp32_mb": 2.7170944213867188,
+        "fp16_mb": 1.3585472106933594,
+        "int8_mb": 0.6792736053466797
+      },
+      "input_shape_crop": [
+        1,
+        1,
+        128,
+        259
+      ],
+      "input_shape_clip": [
+        1,
+        1,
+        128,
+        431
+      ],
+      "backbone_macs_crop": 609658280.0,
+      "backbone_macs_crop_M": 609.65828,
+      "backbone_macs_clip_M": 1025.32292,
+      "backbone_elementwise_ops_M": 0.614,
+      "thop_macs_crop_M": 609.8086,
+      "frontend_macs_crop": {
+        "n_frames": 259,
+        "fft": 5304320.0,
+        "window": 265216,
+        "power": 265734.0,
+        "mel_matmul": 17006976,
+        "log_and_standardise": 99456.0,
+        "total": 22941702.0
+      },
+      "frontend_macs_crop_M": 22.941702,
+      "frontend_mel_sparse_macs_M": 0.260554,
+      "frontend_mel_nnz": 1006,
+      "end_to_end_macs_1crop_M": 632.599982,
+      "end_to_end_macs_3crop_M": 1897.799946,
+      "peak_activation_mb_crop": 9.653968811035156,
+      "latency": {
+        "torch_cpu_1thread": {
+          "median_ms": 96.27425000007861,
+          "mean_ms": 95.85307999997592,
+          "p90_ms": 103.14529999959632,
+          "min_ms": 76.30849999986822,
+          "runs": 60
+        },
+        "torch_cpu_20thread": {
+          "median_ms": 11.636900000212336,
+          "mean_ms": 11.813016666686357,
+          "p90_ms": 13.762200000201119,
+          "min_ms": 9.45640000009007,
+          "runs": 60
+        },
+        "frontend_cpu_1thread": {
+          "median_ms": 1.702849999674072,
+          "mean_ms": 1.7308833332966362,
+          "p90_ms": 2.1887000002607238,
+          "min_ms": 1.1868999999933294,
+          "runs": 60
+        },
+        "cuda": {
+          "median_ms": 4.669299999932264,
+          "mean_ms": 3.067078333348642,
+          "p90_ms": 5.1303999998708605,
+          "min_ms": 0.46459999975922983,
+          "runs": 60
+        }
+      },
+      "cuda_device": "NVIDIA GeForce RTX 3070 Ti Laptop GPU",
+      "onnx_error": "onnx export failed (torchscript: SymbolicValueError; dynamo: UnicodeEncodeError: 'charmap' codec can't encode character '\\u2705' in position 90: character maps to <undefined>)",
+      "top_layers_macs_M": [
+        {
+          "layer": "conv1",
+          "macs_M": 500.35968
+        },
+        {
+          "layer": "conv2",
+          "macs_M": 108.6336
+        },
+        {
+          "layer": "fc1",
+          "macs_M": 0.64
+        },
+        {
+          "layer": "fc2",
+          "macs_M": 0.025
+        }
+      ]
+    }
+  }
+}

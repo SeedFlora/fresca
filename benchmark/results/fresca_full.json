@@ -1,0 +1,59 @@
+{
+  "model": "fresca",
+  "aug": "full",
+  "tag": "",
+  "epochs": 200,
+  "folds": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "completed_folds": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "partial": false,
+  "per_fold": [
+    {
+      "test_fold": 1,
+      "swa_acc": 79.5,
+      "final_acc": 74.75,
+      "best_acc": 78.0
+    },
+    {
+      "test_fold": 2,
+      "swa_acc": 82.25,
+      "final_acc": 74.0,
+      "best_acc": 81.75
+    },
+    {
+      "test_fold": 3,
+      "swa_acc": 82.75,
+      "final_acc": 79.75,
+      "best_acc": 81.0
+    },
+    {
+      "test_fold": 4,
+      "swa_acc": 85.75,
+      "final_acc": 83.5,
+      "best_acc": 84.5
+    },
+    {
+      "test_fold": 5,
+      "swa_acc": 77.5,
+      "final_acc": 73.5,
+      "best_acc": 75.75
+    }
+  ],
+  "mean_swa_acc": 81.55,
+  "std_swa_acc": 2.8346075566116733,
+  "mean_final_acc": 77.1,
+  "std_final_acc": 3.900640972968417,
+  "params_millions": 2.878523,
+  "minutes": 123.10254076719283
+}

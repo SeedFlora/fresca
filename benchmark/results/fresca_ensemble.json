@@ -1,0 +1,78 @@
+{
+  "model": "fresca",
+  "aug": "ensemble",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "epochs": 300,
+  "tta_crops": 7,
+  "folds": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "completed_folds": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "per_fold": [
+    {
+      "test_fold": 1,
+      "ensemble_acc": 82.25,
+      "seed_accs": [
+        79.0,
+        79.0,
+        79.0
+      ]
+    },
+    {
+      "test_fold": 2,
+      "ensemble_acc": 82.75,
+      "seed_accs": [
+        81.75,
+        81.25,
+        81.25
+      ]
+    },
+    {
+      "test_fold": 3,
+      "ensemble_acc": 82.75,
+      "seed_accs": [
+        78.25,
+        81.5,
+        81.0
+      ]
+    },
+    {
+      "test_fold": 4,
+      "ensemble_acc": 84.75,
+      "seed_accs": [
+        81.5,
+        82.25,
+        84.25
+      ]
+    },
+    {
+      "test_fold": 5,
+      "ensemble_acc": 79.75,
+      "seed_accs": [
+        75.5,
+        77.25,
+        76.0
+      ]
+    }
+  ],
+  "mean_swa_acc": 82.45,
+  "std_swa_acc": 1.6,
+  "mean_single_seed": 79.91666666666667,
+  "params_millions": 2.878523,
+  "minutes": 212.33640229701996,
+  "partial": false
+}
